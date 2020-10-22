@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Desktop Files Creator
+Comment=Simple app for create a desktop files
+GenericName=Desktop Files Creator
+Exec=com.github.alexkdeveloper.dfc %U
+Icon=com.github.alexkdeveloper.dfc
+Terminal=false
+Categories=Utility;GTK;Development;
+Keywords=Develop;
