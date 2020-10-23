@@ -1,4 +1,4 @@
-# dfc
+# DFC
 ![screenshot.png](/data/screenshot.png)
 
 The application allows you to create and edit desktop files in GNU/Linux distributions.
@@ -37,15 +37,4 @@ cd build
 sudo ninja install && dfc
 ```
 
-## Generating pot file
 
-```bash
-# after setting up meson build
-cd build
-
-# generates pot file
-sudo ninja dfc-pot
-
-# to regenerate and propagate changes to every po file
-sudo ninja dfc-update-po
-```
