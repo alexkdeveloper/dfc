@@ -11,4 +11,4 @@ Standards-Version: 3.9.3
 Package: com.github.alexkdeveloper.dfc
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: This is a Radio written in Vala using CMake build system.
+Description: This is a DFC written in Vala using CMake build system.
