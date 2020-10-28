@@ -45,22 +45,22 @@ namespace Creator {
         headerbar.show_close_button = true;
         set_titlebar(headerbar);
         back_button_list_page = new Gtk.Button ();
-            back_button_list_page.set_image (new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR));
+            back_button_list_page.set_image (new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             back_button_list_page.vexpand = false;
         back_button_edit_page = new Gtk.Button ();
-            back_button_edit_page.set_image (new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR));
+            back_button_edit_page.set_image (new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             back_button_edit_page.vexpand = false;
         delete_button = new Gtk.Button ();
-            delete_button.set_image (new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.SMALL_TOOLBAR));
+            delete_button.set_image (new Gtk.Image.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             delete_button.vexpand = false;
         edit_button = new Gtk.Button ();
-            edit_button.set_image (new Gtk.Image.from_icon_name ("edit", Gtk.IconSize.SMALL_TOOLBAR));
+            edit_button.set_image (new Gtk.Image.from_icon_name ("document-edit-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             edit_button.vexpand = false;
         save_button = new Gtk.Button();
-            save_button.set_image (new Gtk.Image.from_icon_name ("document-save", Gtk.IconSize.SMALL_TOOLBAR));
+            save_button.set_image (new Gtk.Image.from_icon_name ("document-save-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             save_button.vexpand = false;
         clear_button = new Gtk.Button();
-            clear_button.set_image (new Gtk.Image.from_icon_name ("edit-clear", Gtk.IconSize.SMALL_TOOLBAR));
+            clear_button.set_image (new Gtk.Image.from_icon_name ("edit-clear-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             clear_button.vexpand = false;  
             back_button_list_page.set_tooltip_text("back");
             back_button_edit_page.set_tooltip_text("back");
@@ -86,7 +86,7 @@ namespace Creator {
         stack.set_transition_type (StackTransitionType.SLIDE_LEFT_RIGHT);
         add (stack);
         entry_name = new Entry();
-        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_name.icon_press.connect ((pos, event) => {
         if (pos == Gtk.EntryIconPosition.SECONDARY) {
             entry_name.set_text ("");
@@ -97,7 +97,7 @@ namespace Creator {
         hbox_name.pack_start (label_name, false, true, 0);
         hbox_name.pack_start (this.entry_name, true, true, 0);
         entry_exec = new Entry();
-        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
+        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
         entry_exec.icon_press.connect ((pos, event) => {
         if (pos == Gtk.EntryIconPosition.SECONDARY) {
               on_open_exec();
@@ -108,7 +108,7 @@ namespace Creator {
         hbox_exec.pack_start (label_exec, false, true, 0);
         hbox_exec.pack_start (this.entry_exec, true, true, 0);
         entry_icon = new Entry();
-        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
+        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
         entry_icon.icon_press.connect ((pos, event) => {
         if (pos == Gtk.EntryIconPosition.SECONDARY) {
               on_open_icon();
@@ -119,7 +119,7 @@ namespace Creator {
         hbox_icon.pack_start (label_icon, false, true, 0);
         hbox_icon.pack_start (this.entry_icon, true, true, 0);
         entry_categories = new Entry();
-        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_categories.icon_press.connect ((pos, event) => {
         if (pos == Gtk.EntryIconPosition.SECONDARY) {
             entry_categories.set_text ("");
@@ -130,7 +130,7 @@ namespace Creator {
         hbox_categories.pack_start (label_categories, false, true, 0);
         hbox_categories.pack_start (this.entry_categories, true, true, 0);
         entry_comment = new Entry();
-        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_comment.icon_press.connect ((pos, event) => {
         if (pos == Gtk.EntryIconPosition.SECONDARY) {
             entry_comment.set_text ("");
