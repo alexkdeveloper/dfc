@@ -237,7 +237,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
         directory_path = Environment.get_home_dir () + "/.local/share/applications";
         GLib.File file = GLib.File.new_for_path (directory_path);
-        if (!file.query_exists ()){
+        if (!file.query_exists ()) {
             alert ("Error!\nPath " + directory_path + " is not exists!\nThe program will not be able to perform its functions.");
             button_create.sensitive = false;
             button_edit.sensitive = false;
@@ -293,7 +293,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         Gtk.TreeModel model;
         Gtk.TreeIter iter;
         if (!selection.get_selected (out model, out iter)) {
-            alert("Choose a file");
+            alert ("Choose a file");
             return;
         }
 
@@ -313,24 +313,24 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         set_buttons_on_create_page ();
     }
 
-    private void go_to_list_page_from_create_page (){
+    private void go_to_list_page_from_create_page () {
         stack.visible_child = vbox_list_page;
         set_buttons_on_list_page ();
         show_desktop_files ();
     }
 
-    private void go_to_list_page_from_edit_page (){
+    private void go_to_list_page_from_edit_page () {
         stack.visible_child = vbox_list_page;
         set_buttons_on_list_page ();
     }
 
     private void on_save_clicked () {
         if (is_empty (text_view.buffer.text)) {
-            alert("Nothing to save");
+            alert ("Nothing to save");
             return;
         }
 
-        GLib.File file = GLib.File.new_for_path(directory_path + "/" + item);
+        GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
         var dialog_save_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Save file " + file.get_basename () + " ?") {
             title = "Question"
         };
@@ -353,12 +353,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         Gtk.TreeModel model;
         Gtk.TreeIter iter;
         if (!selection.get_selected (out model, out iter)) {
-            alert("Choose a file");
+            alert ("Choose a file");
             return;
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
-        var dialog_delete_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Delete file " + file.get_basename() + " ?") {
+        var dialog_delete_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Delete file " + file.get_basename () + " ?") {
             title = "Question"
         };
         Gtk.ResponseType result = (Gtk.ResponseType)dialog_delete_file.run ();
@@ -440,7 +440,7 @@ Categories=" + entry_categories.text.strip ();
             stderr.printf ("Error: %s\n", e.message);
         }
 
-        GLib.File file = GLib.File.new_for_path(path);
+        GLib.File file = GLib.File.new_for_path (path);
         if (file.query_exists ()) {
             alert ("File " + file.get_basename () + " is created!\nPath: " + path);
         } else {
@@ -459,7 +459,7 @@ Categories=" + entry_categories.text.strip ();
             Dir dir = Dir.open (directory_path, 0);
             string? name = null;
             while ((name = dir.read_name ()) != null) {
-                list.append(name);
+                list.append (name);
             }
         } catch (FileError err) {
             stderr.printf (err.message);
