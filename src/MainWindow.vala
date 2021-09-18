@@ -260,6 +260,27 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
     private void on_open_icon () {
         var file_chooser = new Gtk.FileChooserDialog ("Open Icon", this, Gtk.FileChooserAction.OPEN, "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.ACCEPT);
+        Gtk.FileFilter filter = new Gtk.FileFilter ();
+		file_chooser.set_filter (filter);
+		filter.add_mime_type ("image/jpeg");
+        filter.add_mime_type ("image/png");
+        Gtk.Image preview_area = new Gtk.Image ();
+		file_chooser.set_preview_widget (preview_area);
+		file_chooser.update_preview.connect (() => {
+			string uri = file_chooser.get_preview_uri ();
+			string path = file_chooser.get_preview_filename();
+			if (uri != null && uri.has_prefix ("file://") == true) {
+				try {
+					Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 250, 250, true);
+					preview_area.set_from_pixbuf (pixbuf);
+					preview_area.show ();
+				} catch (Error e) {
+					preview_area.hide ();
+				}
+			} else {
+				preview_area.hide ();
+			}
+		});
         if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
             entry_icon.text = file_chooser.get_filename ();
         }
