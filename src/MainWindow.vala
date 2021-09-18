@@ -32,7 +32,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
-            title: "DFC",
+            title: "Desktop Files Creator",
             window_position: Gtk.WindowPosition.CENTER,
             height_request: 550,
             width_request: 500,
@@ -43,37 +43,37 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     construct {
         back_button_list_page = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Back"
         };
 
         back_button_edit_page = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Back"
         };
 
         delete_button = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Delete"
         };
 
         edit_button = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("document-edit-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("edit", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Edit"
         };
 
         save_button = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("document-save-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("document-save", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Save"
         };
 
         clear_button = new Gtk.Button () {
             vexpand = false,
-            image = new Gtk.Image.from_icon_name ("edit-clear-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("edit-clear", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = "Clear"
         };
 
@@ -99,7 +99,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         set_buttons_on_create_page ();
 
         entry_name = new Gtk.Entry ();
-        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
+        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
         entry_name.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_name.text = "";
@@ -107,13 +107,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         });
 
         var label_name = new Gtk.Label.with_mnemonic ("_Name:");
-
-        var hbox_name = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
+        label_name.set_xalign(0);
+        
+        var hbox_name = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         hbox_name.pack_start (label_name, false, true, 0);
         hbox_name.pack_start (entry_name, true, true, 0);
 
         entry_exec = new Gtk.Entry ();
-        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
+        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
         entry_exec.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 on_open_exec ();
@@ -121,13 +122,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         });
 
         var label_exec = new Gtk.Label.with_mnemonic ("_Exec:");
-
-        var hbox_exec = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
+        label_exec.set_xalign(0);
+        
+        var hbox_exec = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         hbox_exec.pack_start (label_exec, false, true, 0);
         hbox_exec.pack_start (entry_exec, true, true, 0);
 
         entry_icon = new Gtk.Entry ();
-        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
+        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
         entry_icon.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 on_open_icon ();
@@ -135,13 +137,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         });
 
         var label_icon = new Gtk.Label.with_mnemonic ("_Icon:");
-
-        var hbox_icon = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
+        label_icon.set_xalign(0);
+        
+        var hbox_icon = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         hbox_icon.pack_start (label_icon, false, true, 0);
         hbox_icon.pack_start (entry_icon, true, true, 0);
 
         entry_categories = new Gtk.Entry ();
-        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
+        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
         entry_categories.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_categories.text = "";
@@ -149,13 +152,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         });
 
         var label_categories = new Gtk.Label.with_mnemonic ("_Categories:");
-
-        var hbox_categories = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
+        label_categories.set_xalign(0);
+        
+        var hbox_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         hbox_categories.pack_start (label_categories, false, true, 0);
         hbox_categories.pack_start (entry_categories, true, true, 0);
 
         entry_comment = new Gtk.Entry ();
-        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
+        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
         entry_comment.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_comment.text = "";
@@ -163,8 +167,9 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         });
 
         var label_comment = new Gtk.Label.with_mnemonic ("_Comment:");
-
-        var hbox_comment = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
+        label_comment.set_xalign(0);
+        
+        var hbox_comment = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         hbox_comment.pack_start (label_comment, false, true, 0);
         hbox_comment.pack_start (entry_comment, true, true, 0);
 
