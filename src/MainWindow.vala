@@ -99,7 +99,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         set_buttons_on_create_page ();
 
         entry_name = new Gtk.Entry ();
-        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_name.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_name.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_name.text = "";
@@ -109,12 +109,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var label_name = new Gtk.Label.with_mnemonic ("_Name:");
         label_name.set_xalign(0);
         
-        var hbox_name = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        hbox_name.pack_start (label_name, false, true, 0);
-        hbox_name.pack_start (entry_name, true, true, 0);
+        var vbox_name = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox_name.pack_start (label_name, false, true, 0);
+        vbox_name.pack_start (entry_name, true, true, 0);
 
         entry_exec = new Gtk.Entry ();
-        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
+        entry_exec.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
         entry_exec.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 on_open_exec ();
@@ -124,12 +124,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var label_exec = new Gtk.Label.with_mnemonic ("_Exec:");
         label_exec.set_xalign(0);
         
-        var hbox_exec = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        hbox_exec.pack_start (label_exec, false, true, 0);
-        hbox_exec.pack_start (entry_exec, true, true, 0);
+        var vbox_exec = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox_exec.pack_start (label_exec, false, true, 0);
+        vbox_exec.pack_start (entry_exec, true, true, 0);
 
         entry_icon = new Gtk.Entry ();
-        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open");
+        entry_icon.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "document-open-symbolic");
         entry_icon.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 on_open_icon ();
@@ -139,12 +139,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var label_icon = new Gtk.Label.with_mnemonic ("_Icon:");
         label_icon.set_xalign(0);
         
-        var hbox_icon = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        hbox_icon.pack_start (label_icon, false, true, 0);
-        hbox_icon.pack_start (entry_icon, true, true, 0);
+        var vbox_icon = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox_icon.pack_start (label_icon, false, true, 0);
+        vbox_icon.pack_start (entry_icon, true, true, 0);
 
         entry_categories = new Gtk.Entry ();
-        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_categories.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_categories.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_categories.text = "";
@@ -154,12 +154,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var label_categories = new Gtk.Label.with_mnemonic ("_Categories:");
         label_categories.set_xalign(0);
         
-        var hbox_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        hbox_categories.pack_start (label_categories, false, true, 0);
-        hbox_categories.pack_start (entry_categories, true, true, 0);
+        var vbox_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox_categories.pack_start (label_categories, false, true, 0);
+        vbox_categories.pack_start (entry_categories, true, true, 0);
 
         entry_comment = new Gtk.Entry ();
-        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
+        entry_comment.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear-symbolic");
         entry_comment.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_comment.text = "";
@@ -169,9 +169,9 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var label_comment = new Gtk.Label.with_mnemonic ("_Comment:");
         label_comment.set_xalign(0);
         
-        var hbox_comment = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        hbox_comment.pack_start (label_comment, false, true, 0);
-        hbox_comment.pack_start (entry_comment, true, true, 0);
+        var vbox_comment = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox_comment.pack_start (label_comment, false, true, 0);
+        vbox_comment.pack_start (entry_comment, true, true, 0);
 
         checkbutton_no_display = new Gtk.CheckButton ();
         checkbutton_no_display.label = "NoDisplay";
@@ -182,15 +182,15 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var button_create = new Gtk.Button.with_label ("Create");
         button_create.clicked.connect (on_create_file);
 
-        var button_edit = new Gtk.Button.with_label ("Edit");
+        var button_edit = new Gtk.Button.with_label ("Show All");
         button_edit.clicked.connect (go_to_list_page_from_create_page);
 
         vbox_create_page = new Gtk.Box (Gtk.Orientation.VERTICAL,20);
-        vbox_create_page.pack_start (hbox_name, false, true, 0);
-        vbox_create_page.pack_start (hbox_exec, false, true, 0);
-        vbox_create_page.pack_start (hbox_icon, false, true, 0);
-        vbox_create_page.pack_start (hbox_categories, false, true, 0);
-        vbox_create_page.pack_start (hbox_comment, false, true, 0);
+        vbox_create_page.pack_start (vbox_name, false, true, 0);
+        vbox_create_page.pack_start (vbox_exec, false, true, 0);
+        vbox_create_page.pack_start (vbox_icon, false, true, 0);
+        vbox_create_page.pack_start (vbox_categories, false, true, 0);
+        vbox_create_page.pack_start (vbox_comment, false, true, 0);
         vbox_create_page.pack_start (checkbutton_no_display, false, true, 0);
         vbox_create_page.pack_start (checkbutton_terminal, false, true, 0);
         vbox_create_page.pack_start (button_create, true, false, 0);
@@ -261,26 +261,26 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     private void on_open_icon () {
         var file_chooser = new Gtk.FileChooserDialog ("Open Icon", this, Gtk.FileChooserAction.OPEN, "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.ACCEPT);
         Gtk.FileFilter filter = new Gtk.FileFilter ();
-		file_chooser.set_filter (filter);
-		filter.add_mime_type ("image/jpeg");
-        filter.add_mime_type ("image/png");
-        Gtk.Image preview_area = new Gtk.Image ();
-		file_chooser.set_preview_widget (preview_area);
-		file_chooser.update_preview.connect (() => {
-			string uri = file_chooser.get_preview_uri ();
-			string path = file_chooser.get_preview_filename();
-			if (uri != null && uri.has_prefix ("file://") == true) {
-				try {
-					Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 250, 250, true);
-					preview_area.set_from_pixbuf (pixbuf);
-					preview_area.show ();
-				} catch (Error e) {
-					preview_area.hide ();
-				}
-			} else {
-				preview_area.hide ();
-			}
-		});
+        		file_chooser.set_filter (filter);
+        		filter.add_mime_type ("image/jpeg");
+                filter.add_mime_type ("image/png");
+                Gtk.Image preview_area = new Gtk.Image ();
+        		file_chooser.set_preview_widget (preview_area);
+        		file_chooser.update_preview.connect (() => {
+        			string uri = file_chooser.get_preview_uri ();
+        			string path = file_chooser.get_preview_filename();
+        			if (uri != null && uri.has_prefix ("file://") == true) {
+        				try {
+        					Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 250, 250, true);
+        					preview_area.set_from_pixbuf (pixbuf);
+        					preview_area.show ();
+        				} catch (Error e) {
+        					preview_area.hide ();
+        				}
+        			} else {
+        				preview_area.hide ();
+        			}
+        		});
         if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
             entry_icon.text = file_chooser.get_filename ();
         }
