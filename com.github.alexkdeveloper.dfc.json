@@ -1,0 +1,39 @@
+{
+  "app-id": "com.github.alexkdeveloper.dfc",
+  "runtime": "io.elementary.Platform",
+  "runtime-version": "6",
+  "sdk": "io.elementary.Sdk",
+  "command": "com.github.alexkdeveloper.dfc",
+  "finish-args": [
+     "--share=ipc",
+     "--share=network",
+     "--socket=fallback-x11",
+     "--socket=wayland",
+     "--filesystem=home:ro",
+     "--filesystem=xdg-data/applications:create"
+  ],
+  "cleanup": [
+     "/include",
+     "/lib/pkgconfig",
+     "/man",
+     "/share/doc",
+     "/share/gtk-doc",
+     "/share/man",
+     "/share/pkgconfig",
+     "/share/vala",
+     "*.la",
+     "*.a"
+  ],
+  "modules": [
+     {
+        "name": "Desktop Files Creator",
+        "buildsystem": "meson",
+        "sources": [
+            {
+                "type": "dir",
+                "path": "."
+            }
+        ]
+      }
+  ]
+}
