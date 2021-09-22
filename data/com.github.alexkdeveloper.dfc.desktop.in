@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Desktop Files Creator
+Name=Desktopia
 Comment=Simple app for create a desktop files
-GenericName=Desktop Files Creator
+GenericName=Desktopia
 Exec=com.github.alexkdeveloper.dfc %U
 Icon=com.github.alexkdeveloper.dfc
 Terminal=false
