@@ -26,7 +26,7 @@
   ],
   "modules": [
      {
-        "name": "Desktop Files Creator",
+        "name": "Desktopia",
         "buildsystem": "meson",
         "sources": [
             {
