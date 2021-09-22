@@ -32,7 +32,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
-            title: "Desktop Files Creator",
+            title: "Desktopia",
             window_position: Gtk.WindowPosition.CENTER,
             height_request: 550,
             width_request: 500,
