@@ -4,7 +4,7 @@
   <id>com.github.alexkdeveloper.dfc</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>Desktop Files Creator</name>
+  <name>Desktopia</name>
   <summary>Simple app for create a desktop files on GNU/Linux</summary>
   <description>
     <p>The application allows you to create and edit desktop files in GNU/Linux distributions.</p>
