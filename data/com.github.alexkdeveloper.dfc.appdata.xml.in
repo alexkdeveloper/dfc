@@ -5,9 +5,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Desktopius</name>
-  <summary>Simple app for create a desktop files on GNU/Linux</summary>
+  <summary>Simple app for create a desktop files</summary>
   <description>
-    <p>The application allows you to create and edit desktop files in GNU/Linux distributions.</p>
+    <p>The application allows you to create and edit desktop files.</p>
   </description>
   <provides>
     <binary>com.github.alexkdeveloper.dfc</binary>
