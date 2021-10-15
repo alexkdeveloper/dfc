@@ -32,7 +32,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
-            title: "Desktopius",
+            title: _("Desktopius"),
             window_position: Gtk.WindowPosition.CENTER,
             height_request: 550,
             width_request: 500,
@@ -44,37 +44,37 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         back_button_list_page = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Back"
+            tooltip_text = _("Back")
         };
 
         back_button_edit_page = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Back"
+            tooltip_text = _("Back")
         };
 
         delete_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Delete"
+            tooltip_text = _("Delete")
         };
 
         edit_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("edit", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Edit"
+            tooltip_text = _("Edit")
         };
 
         save_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("document-save", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Save"
+            tooltip_text = _("Save")
         };
 
         clear_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("edit-clear", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = "Clear"
+            tooltip_text = _("Clear")
         };
 
         var headerbar = new Gtk.HeaderBar () {
@@ -106,7 +106,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        var label_name = new Gtk.Label.with_mnemonic ("_Name:");
+        var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         label_name.set_xalign(0);
         
         var vbox_name = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -121,7 +121,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        var label_exec = new Gtk.Label.with_mnemonic ("_Exec:");
+        var label_exec = new Gtk.Label.with_mnemonic (_("_Exec:"));
         label_exec.set_xalign(0);
         
         var vbox_exec = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -136,7 +136,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        var label_icon = new Gtk.Label.with_mnemonic ("_Icon:");
+        var label_icon = new Gtk.Label.with_mnemonic (_("_Icon:"));
         label_icon.set_xalign(0);
         
         var vbox_icon = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -151,7 +151,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        var label_categories = new Gtk.Label.with_mnemonic ("_Categories:");
+        var label_categories = new Gtk.Label.with_mnemonic (_("_Categories:"));
         label_categories.set_xalign(0);
         
         var vbox_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -166,7 +166,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        var label_comment = new Gtk.Label.with_mnemonic ("_Comment:");
+        var label_comment = new Gtk.Label.with_mnemonic (_("_Comment:"));
         label_comment.set_xalign(0);
         
         var vbox_comment = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -174,15 +174,15 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         vbox_comment.pack_start (entry_comment, true, true, 0);
 
         checkbutton_no_display = new Gtk.CheckButton ();
-        checkbutton_no_display.label = "NoDisplay";
+        checkbutton_no_display.label = _("NoDisplay");
 
         checkbutton_terminal = new Gtk.CheckButton ();
-        checkbutton_terminal.label = "Terminal";
+        checkbutton_terminal.label = _("Terminal");
 
-        var button_create = new Gtk.Button.with_label ("Create");
+        var button_create = new Gtk.Button.with_label (_("Create"));
         button_create.clicked.connect (on_create_file);
 
-        var button_edit = new Gtk.Button.with_label ("Show All");
+        var button_edit = new Gtk.Button.with_label (_("Show All"));
         button_edit.clicked.connect (go_to_list_page_from_create_page);
 
         vbox_create_page = new Gtk.Box (Gtk.Orientation.VERTICAL,20);
@@ -243,14 +243,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         directory_path = Environment.get_home_dir () + "/.local/share/applications";
         GLib.File file = GLib.File.new_for_path (directory_path);
         if (!file.query_exists ()) {
-            alert ("Error!\nPath " + directory_path + " is not exists!\nThe program will not be able to perform its functions.");
+            alert (_("Error!\nPath %s does not exists!\nThe program will not be able to perform its functions.").printf(directory_path));
             button_create.sensitive = false;
             button_edit.sensitive = false;
         }
     }
 
     private void on_open_exec () {
-        var file_chooser = new Gtk.FileChooserDialog ("Open Exec", this, Gtk.FileChooserAction.OPEN, "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.ACCEPT);
+        var file_chooser = new Gtk.FileChooserDialog (_("Open Exec"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
         if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
             entry_exec.text = file_chooser.get_filename ();
         }
@@ -259,7 +259,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_icon () {
-        var file_chooser = new Gtk.FileChooserDialog ("Open Icon", this, Gtk.FileChooserAction.OPEN, "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.ACCEPT);
+        var file_chooser = new Gtk.FileChooserDialog (_("Open Icon"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
         Gtk.FileFilter filter = new Gtk.FileFilter ();
         		file_chooser.set_filter (filter);
         		filter.add_mime_type ("image/jpeg");
@@ -290,20 +290,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
     private void on_create_file () {
         if (is_empty (entry_name.text)) {
-            alert ("Enter the name");
+            alert (_("Enter the name"));
             entry_name.grab_focus ();
             return;
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + entry_name.text.strip () + ".desktop");
         if (file.query_exists ()) {
-            alert ("A file with the same name already exists");
+            alert (_("A file with the same name already exists"));
             entry_name.grab_focus ();
             return;
         }
 
-        var dialog_create_desktop_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Create file " + file.get_basename () + " ?") {
-            title = "Question"
+        var dialog_create_desktop_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Create file %s ?").printf (file.get_basename ())) {
+            title = _("Question")
         };
         Gtk.ResponseType result = (Gtk.ResponseType)dialog_create_desktop_file.run ();
         dialog_create_desktop_file.destroy ();
@@ -319,7 +319,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         Gtk.TreeModel model;
         Gtk.TreeIter iter;
         if (!selection.get_selected (out model, out iter)) {
-            alert ("Choose a file");
+            alert (_("Choose a file"));
             return;
         }
 
@@ -330,7 +330,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             FileUtils.get_contents (directory_path + "/" + item, out text);
             text_view.buffer.text = text;
         } catch (Error e) {
-            stderr.printf ("Error: %s\n", e.message);
+            stderr.printf (_("Error: %s") + "\n", e.message);
         }
     }
 
@@ -352,20 +352,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
     private void on_save_clicked () {
         if (is_empty (text_view.buffer.text)) {
-            alert ("Nothing to save");
+            alert (_("Nothing to save"));
             return;
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
-        var dialog_save_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Save file " + file.get_basename () + " ?") {
-            title = "Question"
+        var dialog_save_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save file %s ?").printf (file.get_basename ())) {
+            title = _("Question")
         };
         Gtk.ResponseType result = (Gtk.ResponseType)dialog_save_file.run ();
         if (result == Gtk.ResponseType.OK) {
             try {
                 FileUtils.set_contents (file.get_path (), text_view.buffer.text);
             } catch (Error e) {
-                stderr.printf ("Error: %s\n", e.message);
+                stderr.printf (_("Error: %s") + "\n", e.message);
             }
         }
 
@@ -379,20 +379,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         Gtk.TreeModel model;
         Gtk.TreeIter iter;
         if (!selection.get_selected (out model, out iter)) {
-            alert ("Choose a file");
+            alert (_("Choose a file"));
             return;
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
-        var dialog_delete_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Delete file " + file.get_basename () + " ?") {
-            title = "Question"
+        var dialog_delete_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete file %s ?").printf (file.get_basename ())) {
+            title = _("Question")
         };
         Gtk.ResponseType result = (Gtk.ResponseType)dialog_delete_file.run ();
         dialog_delete_file.destroy ();
         if (result == Gtk.ResponseType.OK) {
             FileUtils.remove (directory_path + "/" + item);
             if (file.query_exists ()) {
-                alert ("Delete failed");
+                alert (_("Delete failed"));
             } else {
                 show_desktop_files ();
                 text_view.buffer.text = "";
@@ -402,12 +402,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
     private void on_clear_clicked () {
         if (is_empty (text_view.buffer.text)) {
-            alert ("Nothing to clear");
+            alert (_("Nothing to clear"));
             return;
         }
 
-        var dialog_clear_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Clear editor?") {
-            title = "Question"
+        var dialog_clear_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Clear editor?")) {
+            title = _("Question")
         };
         Gtk.ResponseType result = (Gtk.ResponseType)dialog_clear_file.run ();
         if (result == Gtk.ResponseType.OK) {
@@ -450,27 +450,27 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         }
 
         string desktop_file = "[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-NoDisplay=" + display + "
-Terminal=" + terminal + "
-Exec=" + entry_exec.text.strip () + "
-Icon=" + entry_icon.text.strip () + "
-Name=" + entry_name.text.strip () + "
-Comment=" + entry_comment.text.strip () + "
-Categories=" + entry_categories.text.strip ();
+                                Encoding=UTF-8
+                                Type=Application
+                                NoDisplay=" + display + "
+                                Terminal=" + terminal + "
+                                Exec=" + entry_exec.text.strip () + "
+                                Icon=" + entry_icon.text.strip () + "
+                                Name=" + entry_name.text.strip () + "
+                                Comment=" + entry_comment.text.strip () + "
+                                Categories=" + entry_categories.text.strip ();
         string path = directory_path + "/" + entry_name.text + ".desktop";
         try {
             FileUtils.set_contents (path, desktop_file);
         } catch (Error e) {
-            stderr.printf ("Error: %s\n", e.message);
+            stderr.printf (_("Error: %s") + "\n", e.message);
         }
 
         GLib.File file = GLib.File.new_for_path (path);
         if (file.query_exists ()) {
-            alert ("File " + file.get_basename () + " is created!\nPath: " + path);
+            alert (_("File %s has been successfully created!\nPath:").printf (file.get_basename ()) + " " + path);
         } else {
-            alert ("Error! Could not create file");
+            alert (_("Error! Could not create file"));
         }
     }
 
@@ -532,7 +532,7 @@ Categories=" + entry_categories.text.strip ();
 
     private void alert (string str) {
         var dialog_alert = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str) {
-            title = "Message"
+            title = _("Message")
         };
         dialog_alert.run ();
         dialog_alert.destroy ();
