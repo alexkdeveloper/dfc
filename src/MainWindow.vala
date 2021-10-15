@@ -450,15 +450,15 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         }
 
         string desktop_file = "[Desktop Entry]
-                                Encoding=UTF-8
-                                Type=Application
-                                NoDisplay=" + display + "
-                                Terminal=" + terminal + "
-                                Exec=" + entry_exec.text.strip () + "
-                                Icon=" + entry_icon.text.strip () + "
-                                Name=" + entry_name.text.strip () + "
-                                Comment=" + entry_comment.text.strip () + "
-                                Categories=" + entry_categories.text.strip ();
+Encoding=UTF-8
+Type=Application
+NoDisplay=" + display + "
+Terminal=" + terminal + "
+Exec=" + entry_exec.text.strip () + "
+Icon=" + entry_icon.text.strip () + "
+Name=" + entry_name.text.strip () + "
+Comment=" + entry_comment.text.strip () + "
+Categories=" + entry_categories.text.strip ();
         string path = directory_path + "/" + entry_name.text + ".desktop";
         try {
             FileUtils.set_contents (path, desktop_file);

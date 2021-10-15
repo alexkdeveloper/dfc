@@ -1,81 +1,81 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# French translations for com.github.alexkdeveloper.dfc package.
+# Copyright (C) 2021 THE com.github.alexkdeveloper.dfc'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.alexkdeveloper.dfc package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Nathan Bonnemains (@NathanBnm), 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.alexkdeveloper.dfc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 18:34+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-10-15 18:25+0200\n"
+"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
+"Language-Team: none\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/MainWindow.vala:35
 msgid "Desktopius"
-msgstr ""
+msgstr "Desktopius"
 
 #: src/MainWindow.vala:47 src/MainWindow.vala:53
 msgid "Back"
-msgstr ""
+msgstr "Retour"
 
 #: src/MainWindow.vala:59
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: src/MainWindow.vala:65
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: src/MainWindow.vala:71
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: src/MainWindow.vala:77
 msgid "Clear"
-msgstr ""
+msgstr "Effacer"
 
 #: src/MainWindow.vala:109
 msgid "_Name:"
-msgstr ""
+msgstr "_Nom :"
 
 #: src/MainWindow.vala:124
 msgid "_Exec:"
-msgstr ""
+msgstr "_Exécutable :"
 
 #: src/MainWindow.vala:139
 msgid "_Icon:"
-msgstr ""
+msgstr "_Icône :"
 
 #: src/MainWindow.vala:154
 msgid "_Categories:"
-msgstr ""
+msgstr "_Catégories :"
 
 #: src/MainWindow.vala:169
 msgid "_Comment:"
-msgstr ""
+msgstr "_Commentaire :"
 
 #: src/MainWindow.vala:177
 msgid "NoDisplay"
-msgstr ""
+msgstr "NoDisplay"
 
 #: src/MainWindow.vala:180
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: src/MainWindow.vala:182
 msgid "Create"
-msgstr ""
+msgstr "Créer"
 
 #: src/MainWindow.vala:185
 msgid "Show All"
-msgstr ""
+msgstr "Afficher tout"
 
 #: src/MainWindow.vala:246
 #, c-format
@@ -84,75 +84,78 @@ msgid ""
 "Path %s does not exists!\n"
 "The program will not be able to perform its functions."
 msgstr ""
+"Erreur !\n"
+"Le chemin %s n'existe pas !\n"
+"Le programme ne sera pas en mesure d'effectuer ses fonctions."
 
 #: src/MainWindow.vala:253
 msgid "Open Exec"
-msgstr ""
+msgstr "Ouvrir l'exécutable"
 
 #: src/MainWindow.vala:253 src/MainWindow.vala:262
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuler"
 
 #: src/MainWindow.vala:253 src/MainWindow.vala:262
 msgid "_Open"
-msgstr ""
+msgstr "_Ouvrir"
 
 #: src/MainWindow.vala:262
 msgid "Open Icon"
-msgstr ""
+msgstr "Ouvrir l'icône"
 
 #: src/MainWindow.vala:293
 msgid "Enter the name"
-msgstr ""
+msgstr "Veuillez entrer le nom"
 
 #: src/MainWindow.vala:300
 msgid "A file with the same name already exists"
-msgstr ""
+msgstr "Un fichier de même nom existe déjà"
 
 #: src/MainWindow.vala:305
 #, c-format
 msgid "Create file %s ?"
-msgstr ""
+msgstr "Créer le fichier %s ?"
 
 #: src/MainWindow.vala:306 src/MainWindow.vala:361 src/MainWindow.vala:388
 #: src/MainWindow.vala:410
 msgid "Question"
-msgstr ""
+msgstr "Question"
 
 #: src/MainWindow.vala:322 src/MainWindow.vala:382
 msgid "Choose a file"
-msgstr ""
+msgstr "Veuillez sélectionner un fichier"
 
 #: src/MainWindow.vala:333 src/MainWindow.vala:368 src/MainWindow.vala:466
 #, c-format
 msgid "Error: %s"
-msgstr ""
+msgstr "Erreur : %s"
 
 #: src/MainWindow.vala:355
 msgid "Nothing to save"
-msgstr ""
+msgstr "Il n'y a rien à enregistrer"
 
 #: src/MainWindow.vala:360
 #, c-format
 msgid "Save file %s ?"
-msgstr ""
+msgstr "Enregistrer le fichier %s ?"
 
 #: src/MainWindow.vala:387
 #, c-format
 msgid "Delete file %s ?"
-msgstr ""
+msgstr "Supprimer le fichier %s ?"
 
 #: src/MainWindow.vala:395
 msgid "Delete failed"
-msgstr ""
+msgstr "Échec de la suppression"
 
 #: src/MainWindow.vala:405
 msgid "Nothing to clear"
-msgstr ""
+msgstr "Il n'y a rien à effacer"
 
 #: src/MainWindow.vala:409
 msgid "Clear editor?"
-msgstr ""
+msgstr "Vider l'éditeur ?"
 
 #: src/MainWindow.vala:471
 #, c-format
@@ -160,11 +163,13 @@ msgid ""
 "File %s has been successfully created!\n"
 "Path:"
 msgstr ""
+"Le fichier %s a bien été créé !\n"
+"Chemin :"
 
 #: src/MainWindow.vala:473
 msgid "Error! Could not create file"
-msgstr ""
+msgstr "Erreur ! Impossible de créer le fichier"
 
 #: src/MainWindow.vala:535
 msgid "Message"
-msgstr ""
+msgstr "Message"
