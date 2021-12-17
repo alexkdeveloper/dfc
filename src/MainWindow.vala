@@ -22,8 +22,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     private Gtk.TextView text_view;
     private Gtk.CheckButton checkbutton_no_display;
     private Gtk.CheckButton checkbutton_terminal;
-    private Gtk.Button back_button_list_page;
-    private Gtk.Button back_button_edit_page;
+    private Gtk.Button back_button;
     private Gtk.Button delete_button;
     private Gtk.Button edit_button;
     private Gtk.Button save_button;
@@ -41,13 +40,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        back_button_list_page = new Gtk.Button () {
-            vexpand = false,
-            image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = _("Back")
-        };
-
-        back_button_edit_page = new Gtk.Button () {
+        back_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("go-previous", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = _("Back")
@@ -80,19 +73,18 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var headerbar = new Gtk.HeaderBar () {
             show_close_button = true
         };
+        get_style_context ().add_class ("rounded");
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        headerbar.add (back_button_list_page);
+        headerbar.add (back_button);
         headerbar.add (edit_button);
         headerbar.add (delete_button);
-        headerbar.add (back_button_edit_page);
         headerbar.add (save_button);
         headerbar.add (clear_button);
         set_titlebar (headerbar);
 
-        back_button_list_page.clicked.connect (go_to_create_page);
+        back_button.clicked.connect (on_back_clicked);
         delete_button.clicked.connect (on_delete_clicked);
         edit_button.clicked.connect (on_edit_clicked);
-        back_button_edit_page.clicked.connect (go_to_list_page_from_edit_page);
         save_button.clicked.connect (on_save_clicked);
         clear_button.clicked.connect (on_clear_clicked);
 
@@ -103,12 +95,13 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         entry_name.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_name.text = "";
+                entry_name.grab_focus ();
             }
         });
 
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         label_name.set_xalign(0);
-        
+
         var vbox_name = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox_name.pack_start (label_name, false, true, 0);
         vbox_name.pack_start (entry_name, true, true, 0);
@@ -123,7 +116,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
         var label_exec = new Gtk.Label.with_mnemonic (_("_Exec:"));
         label_exec.set_xalign(0);
-        
+
         var vbox_exec = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox_exec.pack_start (label_exec, false, true, 0);
         vbox_exec.pack_start (entry_exec, true, true, 0);
@@ -138,7 +131,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
         var label_icon = new Gtk.Label.with_mnemonic (_("_Icon:"));
         label_icon.set_xalign(0);
-        
+
         var vbox_icon = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox_icon.pack_start (label_icon, false, true, 0);
         vbox_icon.pack_start (entry_icon, true, true, 0);
@@ -148,12 +141,13 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         entry_categories.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_categories.text = "";
+                entry_categories.grab_focus ();
             }
         });
 
         var label_categories = new Gtk.Label.with_mnemonic (_("_Categories:"));
         label_categories.set_xalign(0);
-        
+
         var vbox_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox_categories.pack_start (label_categories, false, true, 0);
         vbox_categories.pack_start (entry_categories, true, true, 0);
@@ -163,12 +157,13 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         entry_comment.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
                 entry_comment.text = "";
+                entry_comment.grab_focus ();
             }
         });
 
         var label_comment = new Gtk.Label.with_mnemonic (_("_Comment:"));
         label_comment.set_xalign(0);
-        
+
         var vbox_comment = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox_comment.pack_start (label_comment, false, true, 0);
         vbox_comment.pack_start (entry_comment, true, true, 0);
@@ -182,8 +177,8 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         var button_create = new Gtk.Button.with_label (_("Create"));
         button_create.clicked.connect (on_create_file);
 
-        var button_edit = new Gtk.Button.with_label (_("Show All"));
-        button_edit.clicked.connect (go_to_list_page_from_create_page);
+        var button_show_all = new Gtk.Button.with_label (_("Show All"));
+        button_show_all.clicked.connect (go_to_list_page_from_create_page);
 
         vbox_create_page = new Gtk.Box (Gtk.Orientation.VERTICAL,20);
         vbox_create_page.pack_start (vbox_name, false, true, 0);
@@ -194,7 +189,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         vbox_create_page.pack_start (checkbutton_no_display, false, true, 0);
         vbox_create_page.pack_start (checkbutton_terminal, false, true, 0);
         vbox_create_page.pack_start (button_create, true, false, 0);
-        vbox_create_page.pack_start (button_edit, true, false, 0);
+        vbox_create_page.pack_start (button_show_all, true, false, 0);
 
         var text = new Gtk.CellRendererText ();
 
@@ -245,7 +240,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         if (!file.query_exists ()) {
             alert (_("Error!\nPath %s does not exists!\nThe program will not be able to perform its functions.").printf(directory_path));
             button_create.sensitive = false;
-            button_edit.sensitive = false;
+            button_show_all.sensitive = false;
         }
     }
 
@@ -301,15 +296,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             entry_name.grab_focus ();
             return;
         }
-
-        var dialog_create_desktop_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Create file %s ?").printf (file.get_basename ())) {
-            title = _("Question")
-        };
-        Gtk.ResponseType result = (Gtk.ResponseType)dialog_create_desktop_file.run ();
-        dialog_create_desktop_file.destroy ();
-        if (result == Gtk.ResponseType.OK) {
-            create_desktop_file ();
-        }
+        var dialog_create_desktop_file = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Create file %s ?").printf (file.get_basename ()), "dialog-question", Gtk.ButtonsType.NONE);
+      dialog_create_desktop_file.add_button (_("Cancel"), 0);
+      dialog_create_desktop_file.add_button (_("Create"), 1);
+      dialog_create_desktop_file.show_all ();
+      int result = dialog_create_desktop_file.run ();
+      switch (result) {
+          case 0:
+              dialog_create_desktop_file.destroy ();
+              break;
+          case 1:
+              create_desktop_file ();
+              dialog_create_desktop_file.destroy ();
+              break;
+      }
     }
 
     private void on_edit_clicked () {
@@ -334,20 +334,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    private void go_to_create_page () {
-        stack.visible_child = vbox_create_page;
-        set_buttons_on_create_page ();
+    private void on_back_clicked () {
+        if(stack.get_visible_child ()==vbox_edit_page){
+            stack.visible_child = vbox_list_page;
+            set_buttons_on_list_page ();
+        }else{
+            stack.visible_child = vbox_create_page;
+            set_buttons_on_create_page ();
+        }
     }
 
     private void go_to_list_page_from_create_page () {
         stack.visible_child = vbox_list_page;
         set_buttons_on_list_page ();
         show_desktop_files ();
-    }
-
-    private void go_to_list_page_from_edit_page () {
-        stack.visible_child = vbox_list_page;
-        set_buttons_on_list_page ();
     }
 
     private void on_save_clicked () {
@@ -357,19 +357,25 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
-        var dialog_save_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save file %s ?").printf (file.get_basename ())) {
-            title = _("Question")
-        };
-        Gtk.ResponseType result = (Gtk.ResponseType)dialog_save_file.run ();
-        if (result == Gtk.ResponseType.OK) {
-            try {
+
+        var dialog_save_file = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Save file %s ?").printf (file.get_basename ()), "dialog-question", Gtk.ButtonsType.NONE);
+      dialog_save_file.add_button (_("Cancel"), 0);
+      dialog_save_file.add_button (_("Save"), 1);
+      dialog_save_file.show_all ();
+      int result = dialog_save_file.run ();
+      switch (result) {
+          case 0:
+              dialog_save_file.destroy ();
+              break;
+          case 1:
+               try {
                 FileUtils.set_contents (file.get_path (), text_view.buffer.text);
             } catch (Error e) {
                 stderr.printf (_("Error: %s") + "\n", e.message);
             }
-        }
-
-        dialog_save_file.destroy ();
+              dialog_save_file.destroy ();
+              break;
+      }
     }
 
     private void on_delete_clicked () {
@@ -384,20 +390,27 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         }
 
         GLib.File file = GLib.File.new_for_path (directory_path + "/" + item);
-        var dialog_delete_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete file %s ?").printf (file.get_basename ())) {
-            title = _("Question")
-        };
-        Gtk.ResponseType result = (Gtk.ResponseType)dialog_delete_file.run ();
-        dialog_delete_file.destroy ();
-        if (result == Gtk.ResponseType.OK) {
-            FileUtils.remove (directory_path + "/" + item);
+
+        var dialog_delete_file = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Delete file %s ?").printf (file.get_basename ()), "dialog-question", Gtk.ButtonsType.NONE);
+      dialog_delete_file.add_button (_("Cancel"), 0);
+      dialog_delete_file.add_button (_("Delete"), 1);
+      dialog_delete_file.show_all ();
+      int result = dialog_delete_file.run ();
+      switch (result) {
+          case 0:
+              dialog_delete_file.destroy ();
+              break;
+          case 1:
+              FileUtils.remove (directory_path + "/" + item);
             if (file.query_exists ()) {
                 alert (_("Delete failed"));
             } else {
                 show_desktop_files ();
                 text_view.buffer.text = "";
             }
-        }
+              dialog_delete_file.destroy ();
+              break;
+      }
     }
 
     private void on_clear_clicked () {
@@ -406,15 +419,20 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
             return;
         }
 
-        var dialog_clear_file = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Clear editor?")) {
-            title = _("Question")
-        };
-        Gtk.ResponseType result = (Gtk.ResponseType)dialog_clear_file.run ();
-        if (result == Gtk.ResponseType.OK) {
-            text_view.buffer.text = "";
-        }
-
-        dialog_clear_file.destroy ();
+        var dialog_clear_editor = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Clear editor?"), "dialog-question", Gtk.ButtonsType.NONE);
+      dialog_clear_editor.add_button (_("Cancel"), 0);
+      dialog_clear_editor.add_button (_("Clear"), 1);
+      dialog_clear_editor.show_all ();
+      int result = dialog_clear_editor.run ();
+      switch (result) {
+          case 0:
+              dialog_clear_editor.destroy ();
+              break;
+          case 1:
+              text_view.buffer.text = "";
+              dialog_clear_editor.destroy ();
+              break;
+      }
     }
 
     private void on_select_item () {
@@ -504,8 +522,7 @@ Categories=" + entry_categories.text.strip ();
     }
 
     private void set_buttons_on_edit_page () {
-        set_widget_visible (back_button_list_page, false);
-        set_widget_visible (back_button_edit_page, true);
+        set_widget_visible (back_button, true);
         set_widget_visible (save_button, true);
         set_widget_visible (delete_button, false);
         set_widget_visible (edit_button, false);
@@ -513,8 +530,7 @@ Categories=" + entry_categories.text.strip ();
     }
 
     private void set_buttons_on_list_page () {
-        set_widget_visible (back_button_list_page, true);
-        set_widget_visible (back_button_edit_page, false);
+        set_widget_visible (back_button, true);
         set_widget_visible (save_button, false);
         set_widget_visible (delete_button, true);
         set_widget_visible (edit_button, true);
@@ -522,8 +538,7 @@ Categories=" + entry_categories.text.strip ();
     }
 
     private void set_buttons_on_create_page () {
-        set_widget_visible (back_button_list_page, false);
-        set_widget_visible (back_button_edit_page, false);
+        set_widget_visible (back_button, false);
         set_widget_visible (save_button, false);
         set_widget_visible (delete_button, false);
         set_widget_visible (edit_button, false);
@@ -531,10 +546,9 @@ Categories=" + entry_categories.text.strip ();
     }
 
     private void alert (string str) {
-        var dialog_alert = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str) {
-            title = _("Message")
-        };
-        dialog_alert.run ();
-        dialog_alert.destroy ();
-    }
+        var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Message"), str, "dialog-warning");
+        dialog.show_all ();
+        dialog.run ();
+        dialog.destroy ();
+     }
 }
