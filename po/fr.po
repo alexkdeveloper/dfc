@@ -173,3 +173,7 @@ msgstr "Erreur ! Impossible de créer le fichier"
 #: src/MainWindow.vala:535
 msgid "Message"
 msgstr "Message"
+
+#: src/MainWindow.vala:300 src/MainWindow.vala:362 src/MainWindow.vala:395 src/MainWindow.vala:423
+msgid "Cancel"
+msgstr "Annuler"
