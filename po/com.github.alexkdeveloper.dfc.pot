@@ -38,7 +38,7 @@ msgid "Save"
 msgstr ""
 
 #: src/MainWindow.vala:77
-msgid "Clear"
+msgid "Clean"
 msgstr ""
 
 #: src/MainWindow.vala:109
