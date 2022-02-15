@@ -20,8 +20,8 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Entry entry_categories;
     private Gtk.Entry entry_comment;
     private Gtk.TextView text_view;
-    private Gtk.CheckButton checkbutton_no_display;
-    private Gtk.CheckButton checkbutton_terminal;
+    private Gtk.Switch switch_no_display;
+    private Gtk.Switch switch_terminal;
     private Gtk.Button back_button;
     private Gtk.Button delete_button;
     private Gtk.Button edit_button;
@@ -67,7 +67,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         clear_button = new Gtk.Button () {
             vexpand = false,
             image = new Gtk.Image.from_icon_name ("edit-clear", Gtk.IconSize.SMALL_TOOLBAR),
-            tooltip_text = _("Clear")
+            tooltip_text = _("Clean")
         };
 
         var headerbar = new Gtk.HeaderBar () {
@@ -168,11 +168,19 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         vbox_comment.pack_start (label_comment, false, true, 0);
         vbox_comment.pack_start (entry_comment, true, true, 0);
 
-        checkbutton_no_display = new Gtk.CheckButton ();
-        checkbutton_no_display.label = _("NoDisplay");
+        var switch_box_no_display = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            var switch_no_display_label = new Gtk.Label(_("NoDisplay"));
+            switch_no_display = new Gtk.Switch ();
+            
+            switch_box_no_display.pack_start (switch_no_display_label,false,true,0);
+            switch_box_no_display.pack_end (switch_no_display,false,true,0);
 
-        checkbutton_terminal = new Gtk.CheckButton ();
-        checkbutton_terminal.label = _("Terminal");
+        var switch_box_terminal = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            var switch_terminal_label = new Gtk.Label(_("Terminal"));
+            switch_terminal = new Gtk.Switch ();
+            
+            switch_box_terminal.pack_start (switch_terminal_label,false,true,0);
+            switch_box_terminal.pack_end (switch_terminal,false,true,0);
 
         var button_create = new Gtk.Button.with_label (_("Create"));
         button_create.clicked.connect (on_create_file);
@@ -186,10 +194,10 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         vbox_create_page.pack_start (vbox_icon, false, true, 0);
         vbox_create_page.pack_start (vbox_categories, false, true, 0);
         vbox_create_page.pack_start (vbox_comment, false, true, 0);
-        vbox_create_page.pack_start (checkbutton_no_display, false, true, 0);
-        vbox_create_page.pack_start (checkbutton_terminal, false, true, 0);
-        vbox_create_page.pack_start (button_create, true, false, 0);
-        vbox_create_page.pack_start (button_show_all, true, false, 0);
+        vbox_create_page.pack_start (switch_box_no_display, false, true, 0);
+        vbox_create_page.pack_start (switch_box_terminal, false, true, 0);
+        vbox_create_page.pack_end (button_show_all, false, true, 0);
+        vbox_create_page.pack_end (button_create, false, true, 0);
 
         var text = new Gtk.CellRendererText ();
 
@@ -454,14 +462,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
 
     private void create_desktop_file () {
         string display;
-        if (checkbutton_no_display.active) {
+        if (switch_no_display.active) {
             display = "true";
         } else {
             display = "false";
         }
 
         string terminal;
-        if (checkbutton_terminal.active) {
+        if (switch_terminal.active) {
             terminal = "true";
         } else {
             terminal = "false";
