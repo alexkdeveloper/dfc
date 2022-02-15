@@ -18,7 +18,13 @@
   <url type="help">http://github.com/alexkdeveloper/dfc/issues</url>
   <screenshots>
     <screenshot type="default">
-    <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot.png</image>
+    <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot1.png</image>
+    </screenshot>
+    <screenshot type="default">
+    <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot2.png</image>
+    </screenshot>
+    <screenshot type="default">
+    <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot3.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
@@ -51,6 +57,13 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.0.2" date="2022-02-15">
+     <description>
+      <ul>
+       <li>A small update to the user interface</li>
+      </ul>
+   </description>
+  </release>
      <release version="1.0.1" date="2021-12-18">
      <description>
       <ul>
