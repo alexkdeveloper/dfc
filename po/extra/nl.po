@@ -1,45 +1,45 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Heimen Stoffels <vistausss@fastmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 18:34+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2022-05-02 17:18+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.0\n"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:4
 #: data/com.github.alexkdeveloper.dfc.desktop.in:6
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:7
 msgid "Desktopius"
-msgstr ""
+msgstr "Desktopius"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:5
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:8
 msgid "Simple app for create a desktop files"
-msgstr ""
+msgstr "Een eenvoudige toepassing voor het maken van .desktop-bestanden"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:8
 msgid "com.github.alexkdeveloper.dfc"
-msgstr ""
+msgstr "com.github.alexkdeveloper.dfc"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:11
 msgid "Develop;"
-msgstr ""
+msgstr "Ontwikkeling;"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:10
 msgid "The application allows you to create and edit desktop files."
-msgstr ""
+msgstr "Met deze toepassing kunt u .desktop-bestanden maken en bewerken."
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:15
 msgid "Alex Kryuchkov"
-msgstr ""
+msgstr "Alex Kryuchkov"
