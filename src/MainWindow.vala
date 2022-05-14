@@ -169,14 +169,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         vbox_comment.pack_start (entry_comment, true, true, 0);
 
         var switch_box_no_display = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            var switch_no_display_label = new Gtk.Label(_("NoDisplay"));
+            var switch_no_display_label = new Gtk.Label(_("Not displayed in the menu"));
             switch_no_display = new Gtk.Switch ();
             
             switch_box_no_display.pack_start (switch_no_display_label,false,true,0);
             switch_box_no_display.pack_end (switch_no_display,false,true,0);
 
         var switch_box_terminal = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            var switch_terminal_label = new Gtk.Label(_("Terminal"));
+            var switch_terminal_label = new Gtk.Label(_("Run in the terminal"));
             switch_terminal = new Gtk.Switch ();
             
             switch_box_terminal.pack_start (switch_terminal_label,false,true,0);

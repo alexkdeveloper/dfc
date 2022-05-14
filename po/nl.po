@@ -62,11 +62,11 @@ msgid "_Comment:"
 msgstr "Opmerkin_g:"
 
 #: src/MainWindow.vala:177
-msgid "NoDisplay"
+msgid "Not displayed in the menu"
 msgstr "Verbergen in menu's"
 
 #: src/MainWindow.vala:180
-msgid "Terminal"
+msgid "Run in the terminal"
 msgstr "Terminalvenster"
 
 #: src/MainWindow.vala:182
