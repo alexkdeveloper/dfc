@@ -267,6 +267,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         		file_chooser.set_filter (filter);
         		filter.add_mime_type ("image/jpeg");
                 filter.add_mime_type ("image/png");
+                filter.add_mime_type ("image/svg+xml");
                 Gtk.Image preview_area = new Gtk.Image ();
         		file_chooser.set_preview_widget (preview_area);
         		file_chooser.update_preview.connect (() => {
