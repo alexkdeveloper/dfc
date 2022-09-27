@@ -1,21 +1,22 @@
-# French translations for com.github.alexkdeveloper.dfc package.
-# Copyright (C) 2021 THE com.github.alexkdeveloper.dfc'S COPYRIGHT HOLDER
+# Russian translations for com.github.alexkdeveloper.dfc package.
+# Copyright (C) 2022 THE com.github.alexkdeveloper.dfc'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.alexkdeveloper.dfc package.
-# lenemter <lenemter@gmail.com>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.alexkdeveloper.dfc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 15:49+0900\n"
-"PO-Revision-Date: 2021-10-15 18:25+0200\n"
-"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
+"PO-Revision-Date: 2022-09-27 15:18+0900\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: none\n"
-"Language: fr\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: src/MainWindow.vala:34
 msgid "Desktopius"
@@ -23,59 +24,59 @@ msgstr "Desktopius"
 
 #: src/MainWindow.vala:46
 msgid "Back"
-msgstr "Retour"
+msgstr "Назад"
 
 #: src/MainWindow.vala:52 src/MainWindow.vala:405
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Удалить"
 
 #: src/MainWindow.vala:58
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Редактировать"
 
 #: src/MainWindow.vala:64 src/MainWindow.vala:372
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Сохранить"
 
 #: src/MainWindow.vala:70
 msgid "Clean"
-msgstr "Effacer"
+msgstr "Очистить"
 
 #: src/MainWindow.vala:102
 msgid "_Name:"
-msgstr "_Nom :"
+msgstr "_Название:"
 
 #: src/MainWindow.vala:117
 msgid "_Exec:"
-msgstr "_Exécutable :"
+msgstr "Исполняемый _файл:"
 
 #: src/MainWindow.vala:132
 msgid "_Icon:"
-msgstr "_Icône :"
+msgstr "_Иконка:"
 
 #: src/MainWindow.vala:148
 msgid "_Categories:"
-msgstr "_Catégories :"
+msgstr "_Категории:"
 
 #: src/MainWindow.vala:164
 msgid "_Comment:"
-msgstr "_Commentaire :"
+msgstr "Комме_нтарий:"
 
 #: src/MainWindow.vala:172
 msgid "Not displayed in the menu"
-msgstr ""
+msgstr "Не отображать в меню"
 
 #: src/MainWindow.vala:179
 msgid "Run in the terminal"
-msgstr ""
+msgstr "Запускать в терминале"
 
 #: src/MainWindow.vala:185 src/MainWindow.vala:310
 msgid "Create"
-msgstr "Créer"
+msgstr "Создать"
 
 #: src/MainWindow.vala:188
 msgid "Show All"
-msgstr "Afficher tout"
+msgstr "Показать все"
 
 #: src/MainWindow.vala:249
 #, c-format
@@ -84,88 +85,87 @@ msgid ""
 "Path %s does not exists!\n"
 "The program will not be able to perform its functions."
 msgstr ""
-"Erreur !\n"
-"Le chemin %s n'existe pas !\n"
-"Le programme ne sera pas en mesure d'effectuer ses fonctions."
+"Ошибка!\n"
+"Путь %s не существует!\n"
+"Приложение не может выполнять свои функции."
 
 #: src/MainWindow.vala:256
 msgid "Open Exec"
-msgstr "Ouvrir l'exécutable"
+msgstr "Открыть исполняемый файл"
 
 #: src/MainWindow.vala:256 src/MainWindow.vala:265
 msgid "_Cancel"
-msgstr "_Annuler"
+msgstr "О_тменить"
 
 #: src/MainWindow.vala:256 src/MainWindow.vala:265
 msgid "_Open"
-msgstr "_Ouvrir"
+msgstr "_Открыть"
 
 #: src/MainWindow.vala:265
 msgid "Open Icon"
-msgstr "Ouvrir l'icône"
+msgstr "Открыть иконку"
 
 #: src/MainWindow.vala:297
 msgid "Enter the name"
-msgstr "Veuillez entrer le nom"
+msgstr "Введите название"
 
 #: src/MainWindow.vala:304
 msgid "A file with the same name already exists"
-msgstr "Un fichier de même nom existe déjà"
+msgstr "Файл с таким именем уже существует"
 
 #: src/MainWindow.vala:308 src/MainWindow.vala:370 src/MainWindow.vala:403
 #: src/MainWindow.vala:431
 msgid "Question"
-msgstr "Question"
+msgstr "Вопрос"
 
 #: src/MainWindow.vala:308
 #, c-format
 msgid "Create file %s ?"
-msgstr "Créer le fichier %s ?"
+msgstr "Создать файл %s?"
 
 #: src/MainWindow.vala:309 src/MainWindow.vala:371 src/MainWindow.vala:404
 #: src/MainWindow.vala:432
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Отменить"
 
 #: src/MainWindow.vala:331 src/MainWindow.vala:397
 msgid "Choose a file"
-msgstr "Veuillez sélectionner un fichier"
+msgstr "Выбрать файл"
 
 #: src/MainWindow.vala:342 src/MainWindow.vala:383 src/MainWindow.vala:493
 #, c-format
 msgid "Error: %s"
-msgstr "Erreur : %s"
+msgstr "Ошибка %s"
 
 #: src/MainWindow.vala:364
 msgid "Nothing to save"
-msgstr "Il n'y a rien à enregistrer"
+msgstr "Ничего сохранять"
 
 #: src/MainWindow.vala:370
 #, c-format
 msgid "Save file %s ?"
-msgstr "Enregistrer le fichier %s ?"
+msgstr "Сохранить файл %s?"
 
 #: src/MainWindow.vala:403
 #, c-format
 msgid "Delete file %s ?"
-msgstr "Supprimer le fichier %s ?"
+msgstr "Удалить файл %s?"
 
 #: src/MainWindow.vala:415
 msgid "Delete failed"
-msgstr "Échec de la suppression"
+msgstr "Не удалось удалить"
 
 #: src/MainWindow.vala:427
 msgid "Nothing to clear"
-msgstr "Il n'y a rien à effacer"
+msgstr "Нечего очищать"
 
 #: src/MainWindow.vala:431
 msgid "Clear editor?"
-msgstr "Vider l'éditeur ?"
+msgstr "Очистить редактор?"
 
 #: src/MainWindow.vala:433
-#, fuzzy
 msgid "Clear"
-msgstr "Effacer"
+msgstr "Очистить"
 
 #: src/MainWindow.vala:498
 #, c-format
@@ -173,19 +173,13 @@ msgid ""
 "File %s has been successfully created!\n"
 "Path:"
 msgstr ""
-"Le fichier %s a bien été créé !\n"
-"Chemin :"
+"Файл %s был успешно создан!\n"
+"Путь:"
 
 #: src/MainWindow.vala:500
 msgid "Error! Could not create file"
-msgstr "Erreur ! Impossible de créer le fichier"
+msgstr "Ошибка! Не удалось создать файл"
 
 #: src/MainWindow.vala:558
 msgid "Message"
-msgstr "Message"
-
-#~ msgid "NoDisplay"
-#~ msgstr "NoDisplay"
-
-#~ msgid "Terminal"
-#~ msgstr "Terminal"
+msgstr "Сообщение"

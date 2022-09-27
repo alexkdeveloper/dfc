@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 18:34+0200\n"
+"POT-Creation-Date: 2022-09-27 15:50+0900\n"
 "PO-Revision-Date: 2021-10-15 18:25+0200\n"
 "Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
@@ -28,10 +28,6 @@ msgstr "Desktopius"
 msgid "Simple app for create a desktop files"
 msgstr "Une simple application pour créer des fichiers desktop"
 
-#: data/com.github.alexkdeveloper.dfc.desktop.in:8
-msgid "com.github.alexkdeveloper.dfc"
-msgstr "com.github.alexkdeveloper.dfc"
-
 #: data/com.github.alexkdeveloper.dfc.desktop.in:11
 msgid "Develop;"
 msgstr "Développement;"
@@ -44,3 +40,34 @@ msgstr ""
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:15
 msgid "Alex Kryuchkov"
 msgstr "Alex Kryuchkov"
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:35
+msgid "Added the ability to select svg files for the application icon"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:42
+msgid "Update to elementary platform version 7"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:43
+msgid "Added Dutch translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:50
+msgid "A small update to the user interface"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:57
+msgid "Update to elementary platform version 6.1"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:58
+msgid "Added French translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.dfc.appdata.xml.in:65
+msgid "Initial release"
+msgstr ""
+
+#~ msgid "com.github.alexkdeveloper.dfc"
+#~ msgstr "com.github.alexkdeveloper.dfc"
