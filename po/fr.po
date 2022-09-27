@@ -1,7 +1,7 @@
 # French translations for com.github.alexkdeveloper.dfc package.
 # Copyright (C) 2021 THE com.github.alexkdeveloper.dfc'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.alexkdeveloper.dfc package.
-# lenemter <lenemter@gmail.com>, 2022.
+# Nathan Bonnemains (@NathanBnm), 2021.
 #
 msgid ""
 msgstr ""
