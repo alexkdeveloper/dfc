@@ -1,21 +1,22 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the extra package.
+# Russian translations for com.github.alexkdeveloper.dfc package.
+# Copyright (C) 2022 THE com.github.alexkdeveloper.dfc'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.alexkdeveloper.dfc package.
+# lenemter <lenemter@gmail.com>, 2022.
 #
-# Heimen Stoffels <vistausss@fastmail.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: extra\n"
+"Project-Id-Version: com.github.alexkdeveloper.dfc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 15:50+0900\n"
-"PO-Revision-Date: 2022-05-02 17:18+0200\n"
-"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
-"Language: nl\n"
+"POT-Creation-Date: 2022-09-27 15:15+0900\n"
+"PO-Revision-Date: 2022-09-27 15:18+0900\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:4
 #: data/com.github.alexkdeveloper.dfc.desktop.in:6
@@ -26,15 +27,15 @@ msgstr "Desktopius"
 #: data/com.github.alexkdeveloper.dfc.desktop.in:5
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:8
 msgid "Simple app for create a desktop files"
-msgstr "Een eenvoudige toepassing voor het maken van .desktop-bestanden"
+msgstr "Простое приложение для создания desktop файлов"
 
 #: data/com.github.alexkdeveloper.dfc.desktop.in:11
 msgid "Develop;"
-msgstr "Ontwikkeling;"
+msgstr "Разработка;"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:10
 msgid "The application allows you to create and edit desktop files."
-msgstr "Met deze toepassing kunt u .desktop-bestanden maken en bewerken."
+msgstr "Приложение позволяет создавать и редактировать desktop файлы"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:15
 msgid "Alex Kryuchkov"
@@ -42,31 +43,28 @@ msgstr "Alex Kryuchkov"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:35
 msgid "Added the ability to select svg files for the application icon"
-msgstr ""
+msgstr "Добавлена возможность выбора svg файлов для иконки приложения"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:42
 msgid "Update to elementary platform version 7"
-msgstr ""
+msgstr "Обновление до elementary platform 7"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:43
 msgid "Added Dutch translation"
-msgstr ""
+msgstr "Добавлен голландский перевод"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:50
 msgid "A small update to the user interface"
-msgstr ""
+msgstr "Небольшое обновление интерфейса"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:57
 msgid "Update to elementary platform version 6.1"
-msgstr ""
+msgstr "Обновление до elementary platform 6.1"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:58
 msgid "Added French translation"
-msgstr ""
+msgstr "Добавлен французский перевод"
 
 #: data/com.github.alexkdeveloper.dfc.appdata.xml.in:65
 msgid "Initial release"
-msgstr ""
-
-#~ msgid "com.github.alexkdeveloper.dfc"
-#~ msgstr "com.github.alexkdeveloper.dfc"
+msgstr "Начальный выпуск"
