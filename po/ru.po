@@ -48,7 +48,7 @@ msgstr "_Название:"
 
 #: src/MainWindow.vala:117
 msgid "_Exec:"
-msgstr "Исполняемый _файл:"
+msgstr "_Исполняемый файл:"
 
 #: src/MainWindow.vala:132
 msgid "_Icon:"
@@ -60,7 +60,7 @@ msgstr "_Категории:"
 
 #: src/MainWindow.vala:164
 msgid "_Comment:"
-msgstr "Комме_нтарий:"
+msgstr "_Комментарий:"
 
 #: src/MainWindow.vala:172
 msgid "Not displayed in the menu"
@@ -95,7 +95,7 @@ msgstr "Открыть исполняемый файл"
 
 #: src/MainWindow.vala:256 src/MainWindow.vala:265
 msgid "_Cancel"
-msgstr "О_тменить"
+msgstr "_Отменить"
 
 #: src/MainWindow.vala:256 src/MainWindow.vala:265
 msgid "_Open"
@@ -135,7 +135,7 @@ msgstr "Выбрать файл"
 #: src/MainWindow.vala:342 src/MainWindow.vala:383 src/MainWindow.vala:493
 #, c-format
 msgid "Error: %s"
-msgstr "Ошибка %s"
+msgstr "Ошибка: %s"
 
 #: src/MainWindow.vala:364
 msgid "Nothing to save"
