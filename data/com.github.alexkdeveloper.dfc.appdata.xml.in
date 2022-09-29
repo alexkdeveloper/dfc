@@ -18,12 +18,15 @@
   <url type="help">http://github.com/alexkdeveloper/dfc/issues</url>
   <screenshots>
     <screenshot type="default">
+    <caption>Data entry</caption>
     <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot1.png</image>
     </screenshot>
     <screenshot type="default">
+    <caption>List of files</caption>
     <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot2.png</image>
     </screenshot>
     <screenshot type="default">
+    <caption>Simple file editor</caption>
     <image>https://raw.githubusercontent.com/alexkdeveloper/dfc/main/data/screenshot3.png</image>
     </screenshot>
   </screenshots>
