@@ -253,7 +253,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_exec () {
-        var file_chooser = new Gtk.FileChooserDialog (_("Open Exec"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
+        var file_chooser = new Gtk.FileChooserNative (_("Open Exec"), this, Gtk.FileChooserAction.OPEN,null,null);
         if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
             entry_exec.text = file_chooser.get_filename ();
         }
@@ -262,12 +262,14 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_icon () {
-        var file_chooser = new Gtk.FileChooserDialog (_("Open Icon"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
+        var file_chooser = new Gtk.FileChooserNative (_("Open Icon"), this, Gtk.FileChooserAction.OPEN,null,null);
         Gtk.FileFilter filter = new Gtk.FileFilter ();
         		file_chooser.set_filter (filter);
         		filter.add_mime_type ("image/jpeg");
                 filter.add_mime_type ("image/png");
                 filter.add_mime_type ("image/svg+xml");
+                filter.add_mime_type ("image/x-xpixmap");
+                filter.add_mime_type ("image/vnd.microsoft.icon");
                 Gtk.Image preview_area = new Gtk.Image ();
         		file_chooser.set_preview_widget (preview_area);
         		file_chooser.update_preview.connect (() => {
