@@ -32,10 +32,10 @@
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="1.0.6" date="2022-11-09">
+    <release version="1.0.6" date="2022-11-19">
      <description>
       <ul>
-       <li>Port to FileChooserNative</li>
+       <li>Added additional icon types for the selection window</li>
       </ul>
    </description>
   </release>
