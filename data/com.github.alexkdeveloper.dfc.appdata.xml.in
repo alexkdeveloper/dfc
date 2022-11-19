@@ -35,7 +35,7 @@
     <release version="1.0.6" date="2022-11-19">
      <description>
       <ul>
-       <li>Added additional icon types for the selection window</li>
+       <li>Port to FileChooserNative</li>
       </ul>
    </description>
   </release>
