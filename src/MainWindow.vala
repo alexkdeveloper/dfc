@@ -253,16 +253,21 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_exec () {
-        var file_chooser = new Gtk.FileChooserDialog (_("Open Exec"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
-        if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
-            entry_exec.text = file_chooser.get_filename ();
-        }
-
-        file_chooser.destroy ();
+       var file_chooser = new Gtk.FileChooserNative (_("Open Exec"), this, Gtk.FileChooserAction.OPEN, null, null) {
+                local_only = true
+            };
+            file_chooser.response.connect ((response_id) => {
+                if (response_id == Gtk.ResponseType.ACCEPT) {
+                    entry_exec.text = file_chooser.get_filename ();
+                }
+            });
+            file_chooser.show ();
     }
 
     private void on_open_icon () {
-        var file_chooser = new Gtk.FileChooserDialog (_("Open Icon"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
+        var file_chooser = new Gtk.FileChooserNative (_("Open Icon"), this, Gtk.FileChooserAction.OPEN, null, null){
+              local_only = true
+            };
         Gtk.FileFilter filter = new Gtk.FileFilter ();
         		file_chooser.set_filter (filter);
         		filter.add_mime_type ("image/jpeg");
@@ -287,11 +292,12 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
         				preview_area.hide ();
         			}
         		});
-        if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
-            entry_icon.text = file_chooser.get_filename ();
-        }
-
-        file_chooser.destroy ();
+        file_chooser.response.connect ((response_id) => {
+                if (response_id == Gtk.ResponseType.ACCEPT) {
+                    entry_icon.text = file_chooser.get_filename ();
+                }
+            });
+            file_chooser.show ();
     }
 
     private void on_create_file () {
