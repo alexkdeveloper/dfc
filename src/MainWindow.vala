@@ -253,7 +253,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_exec () {
-        var file_chooser = new Gtk.FileChooserNative (_("Open Exec"), this, Gtk.FileChooserAction.OPEN,null,null);
+        var file_chooser = new Gtk.FileChooserDialog (_("Open Exec"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
         if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
             entry_exec.text = file_chooser.get_filename ();
         }
@@ -262,7 +262,7 @@ public class DFC.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_open_icon () {
-        var file_chooser = new Gtk.FileChooserNative (_("Open Icon"), this, Gtk.FileChooserAction.OPEN,null,null);
+        var file_chooser = new Gtk.FileChooserDialog (_("Open Icon"), this, Gtk.FileChooserAction.OPEN, _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Open"), Gtk.ResponseType.ACCEPT);
         Gtk.FileFilter filter = new Gtk.FileFilter ();
         		file_chooser.set_filter (filter);
         		filter.add_mime_type ("image/jpeg");
