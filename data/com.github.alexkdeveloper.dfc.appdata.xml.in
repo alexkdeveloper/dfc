@@ -2,6 +2,7 @@
 <!-- Copyright 2020 Alex Kryuchkov <kryuchkovalex19830609@gmail.com> -->
 <component type="desktop">
   <id>com.github.alexkdeveloper.dfc</id>
+  <launchable type="desktop-id">com.github.alexkdeveloper.dfc.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Desktopius</name>
@@ -32,10 +33,17 @@
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.0.8" date="2023-11-14">
+     <description>
+      <ul>
+       <li>Updated to elementary platform version 7.2</li>
+      </ul>
+   </description>
+  </release>
     <release version="1.0.7" date="2022-12-06">
      <description>
       <ul>
-       <li>Update to elementary platform version 7.1</li>
+       <li>Updated to elementary platform version 7.1</li>
       </ul>
    </description>
   </release>
